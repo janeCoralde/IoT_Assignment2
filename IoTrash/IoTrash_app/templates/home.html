@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+    <style>
+    .container {
+      max-width: 500px;
+      margin: auto;
+    }
+    </style>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col">
+                <h2 class="text-center" style="color: white;font-family: Verdana; margin-top: 20px;margin-bottom: 30px">Hello User<b></b></h2>
+                <p style="color: white;font-family: Verdana; margin-top: 20px;margin-bottom: 30px">Today is {{ today_date }}, you have {{ num }} smart trashcans.</p>
+
+                <h3 class="text-center" style="color: white;font-family: Verdana; margin-top: 20px;margin-bottom: 30px">Viewing All Devices</h3>
+                {% for device in devices %}
+                    <h4 class="text-center" style="color: white;font-family: Verdana; margin-top: 20px;margin-bottom: 30px">    DEVICE NAME:    {{device.name}} <br>    ROOM:   {{device.room}}<br>    DESCRIPTION:   {{device.description}}</h4>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
